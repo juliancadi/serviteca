@@ -16,7 +16,7 @@ public class Prueba1 {
 
         try{
             con = DBConnection.getConnection();
-            PreparedStatement p = con.prepareStatement("select * from dual");
+            PreparedStatement p = con.prepareStatement("select * from tb_usuario");
             ResultSet rs = p.executeQuery();
             while(rs.next()){
             	System.out.println(rs.getString(1));

@@ -1,0 +1,296 @@
+/* 
+    Document   : principal
+    Created on : 24/05/2010, 09:05:45 AM
+    Author     : Administrador
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*Estilos modificadores del menu de tabs*/
+.tabs-container {
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 175px;
+    left: 19%;    
+}
+.tabs-nav {
+    position: absolute;
+    top: 150px;
+    left: 18.6%;    
+}
+/*Estilos ventanas emergentes (Tickbox)*/
+div.error{
+    margin-top: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    text-align: center;
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 11px;
+    color: red;
+}
+div.Vtickbox {
+    margin: 50px;    
+}
+div.Vtickbox span.titulo{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #006600;
+    font-weight: bold;
+    text-align: center;    
+}
+div.Vtickbox span.texto{
+    font-size: 13px;
+    font-family: Gill, Helvetica, sans-serif;
+    color: #006600;
+    text-align: center;
+}
+div.Vtickbox span.cabeza{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #006600;
+    font-weight: bold;
+    text-align: left;
+}
+div.Vtickbox select{
+        font-size:12px;
+        width:120px;
+        height:20px;
+        color:#003300;        
+}
+div.Vtickbox span.botAccion{
+    margin: 60px;
+}
+/*Estilos Generales*/
+#piePagina{
+    position: absolute;
+    top: 790px;
+    left: 19%;
+    text-align: center;
+    width: 817px;
+    height: 70px;    
+}
+#piePagina span small{
+    font-size: 13px;
+    font-family: Gill, Helvetica, sans-serif;
+    color: #006600;
+    text-align: center;    
+}
+
+#encabezado{
+    position: absolute;
+    top: 10px;
+    left: 19%;
+    width: 817px;
+    height: 200px;    
+}
+#encabezado h1{
+    color: #006600;
+    font-size: 20px;
+    font-family: Gill, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+#encabezado h3{
+    text-align: right;
+    color: #006600;
+    font-size: 17px;
+    font-family: Gill, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+#encabezado h3.segunda{
+    font-size: 13px;
+}
+#encabezado h3 span{
+    color: #000000;
+    font-style: italic;
+    font-weight: normal;
+}
+#encabezado hr{
+    width: 100%;
+    border-bottom:1px dotted #360;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    text-align: right;
+    padding: 0;
+    margin: 0;
+}
+
+#contenido2{
+    width: 817px;
+    height: 570px;
+    position: absolute;
+    top: 215px;
+    left: 19%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*Estilos Clases Especificas */
+
+div.divComentario{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #F90;
+    text-align:left;
+    width:99%;
+}
+div.divComentario2{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #CC0000;
+    text-align:left;
+    width:99%;
+}
+
+#rechazadoLab{
+    color: #F90;
+}
+
+#rechazadoCli{
+    color: #CC0000;
+}
+
+div.divTotal{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #006600;
+    font-weight: bold;
+    text-align:right;
+    width:99%;
+}
+
+div.menuServicios{
+    position:relative;
+    clear:both;
+    margin:0 auto;
+    margin-top:40px;
+    text-align:center;
+    width:100%;    
+}
+div.menuServicios div.itemServicios{
+    width:120px;
+    text-align:center;
+    display:inline-block;
+    margin-right:20px;
+    margin-bottom:40px;
+    vertical-align:top;
+}
+div.menuServicios div.itemServicios div{
+    text-align:center;
+    font-size:12px;
+}
+div.menuServicios div.itemServicios a{
+    text-decoration:none;
+    color:green;
+}
+div.menuServicios div.itemServicios a:hover{
+    text-decoration:underline;
+    color:#F90;
+}
+
+/*Botones Items*/
+div.itemBoton{    
+    text-align:center;
+    display:inline-block;    
+}
+div.itemBoton div{
+    text-align:center;
+    font-size:12px;
+}
+div.itemBoton a{
+    text-decoration:none;
+    color:green;
+}
+div.itemBoton a:hover{
+    text-decoration:underline;
+    color:#F90;
+}
+
+
+div.acciones{
+    font-size:12px;
+    clear:both;
+    width:817px;
+}
+div.acciones ul{
+    position:relative;
+    display:block;
+    background:#D6E9AD;
+    margin:0;
+    padding:0;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+div.acciones li{
+    vertical-align:middle;
+    list-style:none;
+    display:inline;
+}
+div.acciones li a{
+    padding-left:10px;
+    padding-right:10px;
+    color:#360;
+    border-right:1px solid #80B037;
+    font-weight:bold;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+div.acciones li a:hover{
+    color:#F90;
+    font-weight:bold;
+    text-decoration:underline;
+    text-transform:uppercase;
+}
+
+
+table.contenedora{    
+    margin-top: 20px;
+    margin-left: 170px;
+}
+table td.titulo{
+    background: #EFD;
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #006600;
+    font-weight: bold;
+    text-align: left;
+}
+table td.principal{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 16px;
+    color: olive;
+    font-weight: bold;
+    text-align: left;
+}
+table td.text{
+    font-family: Gill, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #006600;
+    font-weight: inherit;
+    text-align: left;
+}
+table select,input{
+    font-size:12px;
+    width:120px;
+    height:20px;
+    color:#003300;
+    padding:0px;
+}
+table input.especial{
+    font-size:12px;
+    width:67px;
+    height:20px;
+    color:#003300;
+    padding:0px;
+}
+table input.check{
+    font-size:12px;
+    width:20px;
+    height:20px;
+    color:#003300;
+    padding:0px;
+}
