@@ -1,31 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Serviteca</title>
-
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="jquery.validate.js"></script>
-
-
-<!-- <link type='text/css' href='style/stylesheet.css' rel='stylesheet' media='screen' />
-<link type='text/css' href='style/basic.css' rel='stylesheet' media='screen' /> -->
-<script src="registroCliente.js" type="text/javascript"></script>
-
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Serviteca JC | Login</title>
+<link href="com/labbd/serviteca/styles/login.css" rel="stylesheet" type="text/css" />
 </head>
-
-<body>
-
-<h1><img src="images/key.png" align="left">LOGIN</h1> 
-<br />
-
-<form id="login" action="SERVLET">
-	<label>E-Mail</label><input type="text" id="email" name="email" style="float: left;"><br />  
-	<label>Password</label><input type="password" id="password" name="password" style="float: left;"><br />  
-	<label>&nbsp;</label><input value="Login" name="Login" id="submit" class="big" type="submit" />
-</form>
-
-
+<body> 
+    <div id="cabezote"></div>
+    <div id="inicioSesion">
+        <form name="login" id="login" method="post" action="LoginCTRL">
+          <p>
+            <label class="leftText">Usuario</label>
+            <input class="inputText" type="text" id="user" name="user" />   
+            <br />
+            <br />                   
+            <label class="leftText">Contraseña</label>             
+            <input class="inputText" type="password" id="password" name="password" />
+          </p>
+          <br />
+          <p>
+            <input class="inputButton" type="submit" name="Login" id="Login" value="Ingresar" />
+          </p>
+        </form>
+    </div>
+  <div id="piedepagina">   	   	
+    	<p id="textopiedepagina"><strong>Acerca de SERVITEKA JC.</strong> © 2011 Derechos Reservados. <br>
+        Laboratorio de Bases de Datos  
+        </p>
+    </div>  
 </body>
 </html>
