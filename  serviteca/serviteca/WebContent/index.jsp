@@ -16,15 +16,19 @@
 	    <div id="inicioSesion">
 	        <form name="login" id="login" method="post" action="LoginCTRL">
 	          <p>
-	            <label class="leftText">Usuario</label>
-	            <input class="text" type="text" id="txtUser" name="txtUser" maxlength="20" />   
+	            <label class="leftText">Usuario:</label>
+	            <input class="txtUser" type="text" id="txtUser" name="txtUser" maxlength="20" />   
 	            <br />
 	            <br />                   
-	            <label class="leftText">Contraseña</label>             
-	            <input class="text" type="password" id="txtPass" name="txtPass" maxlength="15" />
+	            <label class="leftText">Contraseña:</label>             
+	            <input class="txtPass" type="password" id="txtPass" name="txtPass" maxlength="15" />
 	          </p>
 	          <br />
 	          <p>
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            <input class="inputButton" type="submit" name="ingresar" id="ingresar" value="Ingresar" />
 	          </p>
 	        </form>
