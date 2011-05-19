@@ -9,7 +9,7 @@ body {
 #cabezote {
 	height: 130px;
 	width: 1024px;
-	background: url(../resources/cabezote.jpg) #e6e6e6;
+	background: url(../images/cabezote.jpg) #e6e6e6;
 	background-repeat: no-repeat;
 	overflow:hidden;
 	margin:0 auto;

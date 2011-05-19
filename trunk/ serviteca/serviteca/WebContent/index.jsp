@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Serviteca JC | Login</title>
-<link href="com/labbd/serviteca/styles/login.css" rel="stylesheet" type="text/css" />
+<link href="com/labbd/serviteca/view/styles/login.css" rel="stylesheet" type="text/css" />
 </head>
 <body> 
     <div id="cabezote"></div>
