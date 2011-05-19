@@ -1,0 +1,51 @@
+@charset "utf-8";
+body {
+	
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:10px;
+		
+}
+#cabezote {
+	height: 130px;
+	width: 1024px;
+	background: url(../resources/cabezote.jpg) #e6e6e6;
+	background-repeat: no-repeat;
+	overflow:hidden;
+	margin:0 auto;
+	
+}
+#piedepagina {
+	height: 100px;
+	width: 1024px;
+	margin:0 auto;
+	color: #FFF;
+	background:	#000000;	
+	vertical-align:middle;
+}
+#textopiedepagina {
+	padding:3%;
+	}
+#inicioSesion {
+	height:200px;
+	width:400px;
+	margin:0 auto;	
+	vertical-align:super;
+}
+#login {
+	padding:5%;
+}
+
+.inputText {
+	float:right;
+	
+}
+
+.leftText {
+	float:left;
+	text-align:right;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	width: 200px;
+	
+}
