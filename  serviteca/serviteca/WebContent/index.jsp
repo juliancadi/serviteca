@@ -33,9 +33,9 @@
 	          </p>
 	        </form>
 	    </div>
-	  	<div id="piedepagina">   	   	
+	  	<div id="piedepagina">
 	    	<p id="textopiedepagina"><strong>Acerca de SERVITEKA JC.</strong> © 2011 Derechos Reservados. <br>
-	        Laboratorio de Bases de Datos  
+	        Laboratorio de Bases de Datos, Ingenier&iacute;a de Sistemas, Universidad de Antioquia
 	        </p>
 	    </div>  
 	</body>
