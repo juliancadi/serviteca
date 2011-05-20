@@ -22,6 +22,7 @@ body {
 	color: #FFF;
 	background:	#000000;	
 	vertical-align:middle;
+	text-align: center;
 }
 #textopiedepagina {
 	padding:3%;
@@ -52,10 +53,11 @@ body {
 }
 
 .error {
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
 	font: normal 10px arial;
     padding: 2px;
     margin: 1px;
-    background-color: #ffc;
+    /*background-color: #ffc;*/
     border: 1px solid #c00;
     float:left;
     /*position: absolute;*/

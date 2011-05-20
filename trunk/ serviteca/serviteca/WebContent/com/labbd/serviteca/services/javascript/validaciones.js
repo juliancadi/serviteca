@@ -29,5 +29,8 @@ $(document).ready(function() {
                     minlength: "Debe tener una longitud minima de 4 caracteres"
                 }
         }
+        /*errorPlacement: function(error, element){
+            error.appendTo(element.parent());
+        }*/
     });
 }); 
