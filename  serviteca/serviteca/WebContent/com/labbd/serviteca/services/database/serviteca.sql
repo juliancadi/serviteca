@@ -3,12 +3,14 @@ create table tb_usuario(
   clave varchar2(15) not null
 ); 
 
-insert into tb_usuario values('julian','123');
-insert into tb_usuario values('camilo','123');
-insert into tb_usuario values('pepe','456');
-insert into tb_usuario values('ramon','456');
-insert into tb_usuario values('jorge','789');
-insert into tb_usuario values('pedro','789');
+insert into tb_usuario values('julian','1234');
+insert into tb_usuario values('camilo','1234');
+insert into tb_usuario values('federico','4567');
+insert into tb_usuario values('roberto','4567');
+insert into tb_usuario values('guillermo','7897');
+insert into tb_usuario values('rodrigo','7897');
+insert into tb_usuario values('ramiro','7897');
+
 
 create table tb_rol(
   codigo varchar2(4) primary key,
@@ -30,10 +32,10 @@ create table tb_rol_por_usuario(
 
 insert into tb_rol_por_usuario values('0','julian');
 insert into tb_rol_por_usuario values('0','camilo');
-insert into tb_rol_por_usuario values('1','julian');
-insert into tb_rol_por_usuario values('1','camilo');
-insert into tb_rol_por_usuario values('3','jorge');
-insert into tb_rol_por_usuario values('4','pedro');
+insert into tb_rol_por_usuario values('1','federico');
+insert into tb_rol_por_usuario values('1','roberto');
+insert into tb_rol_por_usuario values('3','guillermo');
+insert into tb_rol_por_usuario values('4','rodrigo');
 
 create table tb_estado(
   codigo varchar2(4) primary key,
@@ -126,16 +128,12 @@ create table tb_cliente(
   email varchar2(30)
 );
 
-delete from tb_cliente;
-
 insert into tb_cliente values('15464165','juan','perez','4895455','3156545654','juan.perez@gmail.com');
 insert into tb_cliente values('489546','pedro','cañola','2498756','3156748654','pedro.cañola@gmail.com');
 insert into tb_cliente values('7495145','gloria','martinez','4826947','3105897854','gloria.martinez@gmail.com');
 insert into tb_cliente values('7865214','monica','gutierres','7894564','3105789854','monica.gutierres@gmail.com');
 insert into tb_cliente values('89446521','laura','orozco','4370456','3004897565','laura.orozco@gmail.com');
 insert into tb_cliente (cedula,nombre,apellido,tel_fijo) values('11203648','rafael','lombana','7894156');
-
-drop table tb_automovil;
 
 create table tb_automovil(
   codigo varchar2(10) primary key,
@@ -150,8 +148,6 @@ create table tb_automovil(
   cliente varchar2(8) references tb_cliente,
   observaciones varchar2(200)
 );
-
-delete from tb_automovil;
 
 insert into tb_automovil values('1','123qwe','12455456545','mazda','seis','2008','45fsdf5486sd','azul','45846fsdf512fs','15464165','reparacion de la puerta delantera derecha');
 insert into tb_automovil values('2','854jui','48987456515','renault','twingo','2004','8465fsdf674f','negro','4821d65f45fsd','7495145','reparacion de motor');
@@ -222,4 +218,5 @@ set serveroutput on;
 print costo
 /
 
-select * from tb_factura;
+SELECT r.codigo, r.nombre, r.descripcion FROM tb_rol r, tb_rol_por_usuario pu WHERE r.codigo=pu.codigo_rol AND pu.nombre_usuario='julian' ORDER BY 2;
+SELECT nombre, clave FROM tb_usuario WHERE nombre='julian' AND clave='1234';

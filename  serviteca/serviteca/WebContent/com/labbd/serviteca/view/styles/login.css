@@ -37,6 +37,11 @@ body {
 	padding:5%;
 }
 
+#respuesta{
+	font: normal 15px arial;
+    color: red;
+}
+
 .txtUser {
 	float:left;
 }
