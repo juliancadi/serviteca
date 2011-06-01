@@ -28,7 +28,7 @@ public class ClienteDTO implements Serializable {
 	private String telMovil;
 
 
-	private List<AutomovilDTO> tbAutomovils;
+	private List<AutomovilDTO> tbAutomoviles;
 
     public ClienteDTO() {
     }
@@ -81,12 +81,12 @@ public class ClienteDTO implements Serializable {
 		this.telMovil = telMovil;
 	}
 
-	public List<AutomovilDTO> getTbAutomovils() {
-		return this.tbAutomovils;
+	public List<AutomovilDTO> getTbAutomoviles() {
+		return this.tbAutomoviles;
 	}
 
-	public void setTbAutomovils(List<AutomovilDTO> tbAutomovils) {
-		this.tbAutomovils = tbAutomovils;
+	public void setTbAutomoviles(List<AutomovilDTO> tbAutomoviles) {
+		this.tbAutomoviles = tbAutomoviles;
 	}
 	
 }

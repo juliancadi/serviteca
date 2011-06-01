@@ -36,7 +36,7 @@ public class AutomovilDTO implements Serializable {
 	private ClienteDTO tbCliente;
 
 
-	private List<ReparacionDTO> tbReparacions;
+	private List<ReparacionDTO> tbReparaciones;
 
     public AutomovilDTO() {
     }
@@ -129,12 +129,12 @@ public class AutomovilDTO implements Serializable {
 		this.tbCliente = tbCliente;
 	}
 	
-	public List<ReparacionDTO> getTbReparacions() {
-		return this.tbReparacions;
+	public List<ReparacionDTO> getTbReparaciones() {
+		return this.tbReparaciones;
 	}
 
-	public void setTbReparacions(List<ReparacionDTO> tbReparacions) {
-		this.tbReparacions = tbReparacions;
+	public void setTbReparaciones(List<ReparacionDTO> tbReparaciones) {
+		this.tbReparaciones = tbReparaciones;
 	}
 	
 }
