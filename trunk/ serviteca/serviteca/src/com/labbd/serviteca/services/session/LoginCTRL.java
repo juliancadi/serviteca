@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginCTRL
@@ -61,11 +62,10 @@ public class LoginCTRL extends HttpServlet {
 
 	private void aprobar(HttpServletRequest req, HttpServletResponse resp, UsuarioDTO u) throws ServletException, IOException{
 
-			/*HttpSession session = req.getSession(true);
+			HttpSession session = req.getSession(true);
 			session.setMaxInactiveInterval(60*60*2);
-			req.getSession().setAttribute("usuarioactual", usuario);
-			resp.sendRedirect(getPath(cargo));*/
-			resp.getWriter().println("PAGINA QUE NO HEMOS HECHO");
+			req.getSession().setAttribute("usuarioactual", u);
+			resp.sendRedirect("com/labbd/serviteca/view/elegirRol.jsp");
 		
 	}
 

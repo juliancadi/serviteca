@@ -30,12 +30,14 @@ create table tb_rol_por_usuario(
   primary key(codigo_rol, nombre_usuario)
 );
 
-insert into tb_rol_por_usuario values('0','julian');
-insert into tb_rol_por_usuario values('0','camilo');
+insert into tb_rol_por_usuario values('1','julian');
+insert into tb_rol_por_usuario values('2','julian');
+insert into tb_rol_por_usuario values('1','camilo');
+insert into tb_rol_por_usuario values('2','camilo');
 insert into tb_rol_por_usuario values('1','federico');
-insert into tb_rol_por_usuario values('1','roberto');
-insert into tb_rol_por_usuario values('3','guillermo');
-insert into tb_rol_por_usuario values('4','rodrigo');
+insert into tb_rol_por_usuario values('2','roberto');
+insert into tb_rol_por_usuario values('1','guillermo');
+insert into tb_rol_por_usuario values('2','rodrigo');
 
 create table tb_estado(
   codigo varchar2(4) primary key,
@@ -220,3 +222,5 @@ print costo
 
 SELECT r.codigo, r.nombre, r.descripcion FROM tb_rol r, tb_rol_por_usuario pu WHERE r.codigo=pu.codigo_rol AND pu.nombre_usuario='julian' ORDER BY 2;
 SELECT nombre, clave FROM tb_usuario WHERE nombre='julian' AND clave='1234';
+
+commit;
