@@ -15,28 +15,28 @@ UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 <title>Insert title here</title>
 </head>
 <body> 
-	 <div id="cabezote"></div>
-	 <div id="inicioSesion">
-	     <form name="elegirRol" id="elegirRol" method="post" action="../../../../ElegirRolCTRL">
-	     	<%if(usuario!=null){ %>
-	     	<div id="roles"><br>
-	     	<%
-	     	String checked = "checked=\"checked\"";
-	     	for(int i=0; i<usuario.getTbRols().size();i++){ %>
-			<input type="radio" name="roles" value="<%=usuario.getTbRols().get(i).getCodigo()%>" <%=checked %>><%=usuario.getTbRols().get(i).getNombre()%><br>
-			<%
-			checked="";
-	     	} %>
+	<div id="cabezote"></div>
+	<div id="inicioSesion">
+	    <form name="elegirRol" id="elegirRol" method="post" action="../../../../ElegirRolCTRL">
+	    	<%if(usuario!=null){ %>
+	    	<div id="roles"><br>
+	    	<%
+	    	String checked = "checked=\"checked\"";
+	    	for(int i=0; i<usuario.getTbRols().size();i++){ %>
+		<input type="radio" name="roles" value="<%=usuario.getTbRols().get(i).getCodigo()%>" <%=checked %>><%=usuario.getTbRols().get(i).getNombre()%><br>
+		<%
+		checked="";
+	    	} %>
+		<br>
+		<input class="inputButton" type="submit" name="ingresar" id="ingresar" value="Ingresar" />
+		</div>
+		<%}else{ %>
+			<center><div id="respuesta">Debe ingresar con el nombre de usuario y contraseña</div>
 			<br>
-			<input class="inputButton" type="submit" name="ingresar" id="ingresar" value="Ingresar" />
-			</div>
-			<%}else{ %>
-				<center><div id="respuesta">Debe ingresar con el nombre de usuario y contraseña</div>
-				<br>
-				<a href="../../../../index.jsp">Ingresar</a></center>
-			<%} %>
-	     </form>
-	 </div>
+			<a href="../../../../index.jsp">Ingresar</a></center>
+		<%} %>
+	    </form>
+	</div>
 	<div id="piedepagina">
 	 	<p id="textopiedepagina"><strong>Acerca de SERVITEKA JC.</strong> © 2011 Derechos Reservados. <br>
 	     Laboratorio de Bases de Datos, Ingenier&iacute;a de Sistemas, Universidad de Antioquia

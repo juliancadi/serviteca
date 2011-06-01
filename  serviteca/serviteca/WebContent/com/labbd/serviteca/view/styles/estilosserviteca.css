@@ -79,3 +79,44 @@ body {
 	/*float:right;*/
 	/*text-align:left;*/
 }
+
+#menuv {
+        border: 1px solid #ACCFE8;
+        border-width: 1px 1px 1px 1px;
+        width: 150px;
+        font: 80% "Trebuchet MS", Arial, Helvetica, sans-serif;
+        top: 3%;
+        height: 500px;
+}
+#menuv ul, li {
+        list-style-type: none;
+}
+
+#menuv ul {
+        margin: 0;
+        padding: 0;
+}
+
+#menuv li {
+        border-bottom: 1px solid #ACCFE8;
+}
+
+#menuv a {
+        text-decoration: none;
+        color: #3366CC;
+        background: #F0F7FC;
+        display: block;
+        padding: 3px 6px;
+        width: 138px;
+}
+
+#menuv a:hover {
+        background: #DBEBF6;
+}
+
+#contenedorppal {
+	width:1024px;
+	height: 500px;		
+	overflow:hidden;
+    margin:0 auto;
+}
