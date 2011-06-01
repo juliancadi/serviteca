@@ -10,7 +10,7 @@ Object respuesta = session.getAttribute("respuestaSolicitud");
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Serviteca JC | Login</title>
-		<link href="com/labbd/serviteca/view/styles/login.css" rel="stylesheet" type="text/css" />
+		<link href="com/labbd/serviteca/view/styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 		
 		<script type="text/javascript" src="com/labbd/serviteca/services/javascript/jquery.js"></script>
 		<script type="text/javascript" src="com/labbd/serviteca/services/javascript/jquery.validate.js"></script>
