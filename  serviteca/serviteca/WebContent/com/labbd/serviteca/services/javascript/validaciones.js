@@ -33,4 +33,24 @@ $(document).ready(function() {
             error.appendTo(element.parent());
         }*/
     });
+	
+	$("#agregarReparacion").validate({
+        rules: {
+
+               txtCosto: {
+                    required: true,
+                    minlength: 4
+                }
+        },
+        messages: {                            
+
+                txtCosto:{
+                    required: "Es necesario escribir un costo",
+                    minlength: "Debe tener una longitud minima de 4 caracteres"
+                }
+        }
+        /*errorPlacement: function(error, element){
+            error.appendTo(element.parent());
+        }*/
+    });
 }); 

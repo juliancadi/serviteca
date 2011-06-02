@@ -8,7 +8,7 @@ public class EstadoDAOHelper {
     }
 	
     public static String getEstados() {
-    	String result = "SELECT codigo, nombre, descripcion FROM tb_estado WHERE codigo=?";
+    	String result = "SELECT codigo, nombre, descripcion FROM tb_estado ORDER BY nombre";
         return result;
     }
 
