@@ -210,17 +210,37 @@ begin
   valor_total:= valor_neto + iva;
   codigo_nuevo:='1';
   insert into tb_factura values(codigo_nuevo,reparacion,valor_neto,iva,valor_total);
+  select max(codigo) into codigo_nuevo from tb_factura;
   return codigo_nuevo;
 end;
 /
 
-var costo number;
-execute :costo := generar_factura('1');
-set serveroutput on;
-print costo
+CREATE SEQUENCE seq_factura
+INCREMENT BY 1
+START WITH 1
+NOMINVALUE
+NOMAXVALUE;
+
+CREATE TRIGGER tg_factura
+BEFORE INSERT ON tb_factura
+FOR EACH ROW
+BEGIN
+SELECT seq_factura.NEXTVAL INTO :NEW.codigo FROM dual;
+END;
 /
 
-SELECT r.codigo, r.nombre, r.descripcion FROM tb_rol r, tb_rol_por_usuario pu WHERE r.codigo=pu.codigo_rol AND pu.nombre_usuario='julian' ORDER BY 2;
-SELECT nombre, clave FROM tb_usuario WHERE nombre='julian' AND clave='1234';
+CREATE SEQUENCE seq_reparacion
+INCREMENT BY 1
+START WITH 1
+NOMINVALUE
+NOMAXVALUE;
+
+CREATE TRIGGER tg_reparacion
+BEFORE INSERT ON tb_reparacion
+FOR EACH ROW
+BEGIN
+SELECT seq_reparacion.NEXTVAL INTO :NEW.codigo FROM dual;
+END;
+/
 
 commit;
