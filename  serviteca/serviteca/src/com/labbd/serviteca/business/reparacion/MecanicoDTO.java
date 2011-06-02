@@ -27,10 +27,10 @@ public class MecanicoDTO implements Serializable {
 
 	private String telMovil;
 
-	private List<EspecialidadDTO> tbEspecialidads;
+	private List<EspecialidadDTO> tbEspecialidades;
 
 
-	private List<ReparacionDTO> tbReparacions;
+	private List<ReparacionDTO> tbReparaciones;
 
     public MecanicoDTO() {
     }
@@ -91,20 +91,20 @@ public class MecanicoDTO implements Serializable {
 		this.telMovil = telMovil;
 	}
 
-	public List<EspecialidadDTO> getTbEspecialidads() {
-		return this.tbEspecialidads;
+	public List<EspecialidadDTO> getTbEspecialidades() {
+		return this.tbEspecialidades;
 	}
 
-	public void setTbEspecialidads(List<EspecialidadDTO> tbEspecialidads) {
-		this.tbEspecialidads = tbEspecialidads;
+	public void setTbEspecialidades(List<EspecialidadDTO> tbEspecialidades) {
+		this.tbEspecialidades = tbEspecialidades;
 	}
 	
-	public List<ReparacionDTO> getTbReparacions() {
-		return this.tbReparacions;
+	public List<ReparacionDTO> getTbReparaciones() {
+		return this.tbReparaciones;
 	}
 
-	public void setTbReparacions(List<ReparacionDTO> tbReparacions) {
-		this.tbReparacions = tbReparacions;
+	public void setTbReparaciones(List<ReparacionDTO> tbReparaciones) {
+		this.tbReparaciones = tbReparaciones;
 	}
 	
 }
