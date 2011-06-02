@@ -2,8 +2,8 @@
 body {
 	
 	/*text-align:center;*/
-	margin-top:10px;
-	margin-bottom:10px;
+	/*margin-top:10px;
+	margin-bottom:10px;*/
 		
 }
 #cabezote {
@@ -31,7 +31,6 @@ body {
 	height:200px;
 	width:800px;
 	margin:0 auto;	
-	vertical-align:super;
 }
 #login {
 	padding:5%;
@@ -48,10 +47,7 @@ body {
 	width: 150px;
 }
 
-.txtUser {
-	float:left;
-}
-.txtPass {
+.itemForm {
 	float:left;
 }
 
@@ -87,6 +83,7 @@ body {
         font: 80% "Trebuchet MS", Arial, Helvetica, sans-serif;
         top: 3%;
         height: 500px;
+        float: left;
 }
 #menuv ul, li {
         list-style-type: none;
@@ -117,6 +114,13 @@ body {
 #contenedorppal {
 	width:1024px;
 	height: 500px;		
-	overflow:hidden;
+	/*overflow:hidden;*/
     margin:0 auto;
+}
+
+#contenido {
+	height: 500px;
+	width: 874px;
+	margin:0 auto;
+	padding: 1px;
 }

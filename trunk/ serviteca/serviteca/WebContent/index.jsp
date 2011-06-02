@@ -22,11 +22,11 @@ Object respuesta = session.getAttribute("respuestaSolicitud");
 	        <form name="login" id="login" method="post" action="LoginCTRL">
 	          <p>
 	            <label class="leftText">Usuario:</label>
-	            <input class="txtUser" type="text" id="txtUser" name="txtUser" maxlength="20" />   
+	            <input class="itemForm" type="text" id="txtUser" name="txtUser" maxlength="20" />   
 	            <br />
 	            <br />                   
 	            <label class="leftText">Contraseña:</label>             
-	            <input class="txtPass" type="password" id="txtPass" name="txtPass" maxlength="15" />
+	            <input class="itemForm" type="password" id="txtPass" name="txtPass" maxlength="15" />
 	          </p>
 	          <br />
 	          <p>

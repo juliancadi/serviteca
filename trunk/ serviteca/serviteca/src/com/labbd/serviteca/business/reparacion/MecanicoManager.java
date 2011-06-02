@@ -21,7 +21,7 @@ public class MecanicoManager {
        return mecanico;
    }
 
-   public List<MecanicoDTO> getMecanicoes(){
+   public List<MecanicoDTO> getMecanicos(){
        List<MecanicoDTO> mecanicos = null;
        mecanicos = dao.getMecanicos();
        return mecanicos;

@@ -21,7 +21,7 @@ public class EstadoManager {
        return estado;
    }
 
-   public List<EstadoDTO> getEstadoes(){
+   public List<EstadoDTO> getEstados(){
        List<EstadoDTO> estados = null;
        estados = dao.getEstados();
        return estados;

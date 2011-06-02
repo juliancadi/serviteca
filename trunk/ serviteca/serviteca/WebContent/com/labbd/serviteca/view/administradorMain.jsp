@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Serviteca JC | Login</title>
+	<title>Serviteca JC | Administrador</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
