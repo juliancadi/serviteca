@@ -13,11 +13,11 @@
 	<div id="contenedorppal">
 		<div id="menuv">
 	        <ul>
-	            <li><a href="#menuv">Agregar reparaci&oacute;n</a></li>
-	            <li><a href="#menuv">Modificar reparaci&oacute;n</a></li>
-	            <li><a href="#menuv">Agregar repuesto a reparaci&oacute;n</a></li>
-	            <li><a href="#menuv">Quitar repuesto de reparaci&oacute;n</a></li>
-	            <li><a href="#menuv">Cerrar sesi&oacute;n</a></li>
+	            <li><a href="agregarReparacion.jsp">Agregar reparaci&oacute;n</a></li>
+	            <li><a href="modificarReparacion.jsp">Modificar reparaci&oacute;n</a></li>
+	            <li><a href="agregarRepuesto">Agregar repuesto a reparaci&oacute;n</a></li>
+	            <li><a href="quitarRepuesto">Quitar repuesto de reparaci&oacute;n</a></li>
+	            <li><a href="../../../../index.jsp?logout=1">Cerrar sesi&oacute;n</a></li>
 	        </ul>
 		</div>
 	</div>

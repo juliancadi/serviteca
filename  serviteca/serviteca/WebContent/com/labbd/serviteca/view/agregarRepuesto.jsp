@@ -6,7 +6,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Serviteca JC | Agregar Reparaci&oacute;n</title>
+	<title>Serviteca JC | Agregar Repuesto</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 	
 	<script type="text/javascript" src="../services/javascript/jquery.js"></script>

@@ -4,7 +4,10 @@
 <%
 
 Object respuesta = session.getAttribute("respuestaSolicitud");
-    
+String logout = request.getParameter("logout");
+if(logout!=null){
+	session.invalidate();
+}
 %>
 <html>
 	<head>
