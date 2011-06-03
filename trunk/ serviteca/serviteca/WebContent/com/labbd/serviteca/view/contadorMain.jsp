@@ -13,8 +13,8 @@
 	<div id="contenedorppal">
 		<div id="menuv">
 	        <ul>
-	            <li><a href="#menuv">Generar factura</a></li>
-	            <li><a href="#menuv">Cerrar sesi&oacute;n</a></li>
+	            <li><a href="generarFactura.jsp">Generar factura</a></li>
+	            <li><a href="../../../../index.jsp?logout=1">Cerrar sesi&oacute;n</a></li>
 	        </ul>
 		</div>
 	</div>
