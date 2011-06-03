@@ -66,7 +66,7 @@ String dir = request.getParameter("dir");
 		</div>
 	</div>
 	<div id="piedepagina">
-	 	<p id="textopiedepagina"><strong>Acerca de SERVITEKA JC.</strong> © 2011 Derechos Reservados. <br>
+	 	<p id="textopiedepagina"><strong>Acerca de SERVITECA JC.</strong> © 2011 Derechos Reservados. <br>
 	     Laboratorio de Bases de Datos, Ingenier&iacute;a de Sistemas, Universidad de Antioquia
 	     </p>
 	 </div>  
