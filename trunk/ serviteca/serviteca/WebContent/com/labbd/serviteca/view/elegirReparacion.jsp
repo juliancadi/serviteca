@@ -29,38 +29,50 @@ session.setAttribute("respuestaSolicitud",null);
 </head>
 <body> 
 	<div id="cabezote"></div>
-	<div id="elegirRep">
-	    <form name="elegirReparacion" id="elegirReparacion" method="post" action="../../../../ElegirReparacionCTRL">
-	    	<div id="reparaciones">
-	    		<select class="itemForm" id="selAuto" name="selAuto">
-	            	<option value="0">- -</option>
-	            	<%
-	            	ReparacionManager rm = ReparacionManager.getReparacionManager();
-	            	List<ReparacionDTO> reparaciones = rm.getReparaciones();
-	            	if(reparaciones!=null && !reparaciones.isEmpty()){
-	            	for(int i=0; i<reparaciones.size();i++){ %>
-	            		<option value="<%=reparaciones.get(i).getCodigo()%>"><%= reparaciones.get(i).getCodigo()+" - "+reparaciones.get(i).getTbAutomovil().getMarca()+" - "+reparaciones.get(i).getTbAutomovil().getPlaca()%></option>
-           			<%}
-	            	}
-	            	%>            	
-	            </select>
-	            <input type="hidden" name="dir" id="dir" value="<%= dir %>" />	
-				<br />
-				<br />
-				<input class="inputButton" type="submit" name="modificar" id="modificar" value="Modificar" />
-				 <%
-	          if(respuesta!=null){
-	        	  %>
-	        	  <div id="respuesta">
-	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	        	  <%=respuesta %></div>
-	        	  <%
-	          }
-	          %>
-			</div>
-	    </form>
+	<div style="padding: 0.5%;"> </div>
+	<div id="contenedorppal">
+		<div id="menuv">
+	        <ul>
+	            <li><a href="agregarReparacion.jsp">Agregar reparaci&oacute;n</a></li>
+	            <li><a href="elegirReparacion.jsp?dir=mod">Modificar reparaci&oacute;n</a></li>
+	            <li><a href="elegirReparacion.jsp?dir=agr">Agregar repuesto a reparaci&oacute;n</a></li>
+	            <li><a href="elegirReparacion.jsp?dir=qui">Quitar repuesto de reparaci&oacute;n</a></li>
+	            <li><a href="../../../../index.jsp?logout=1">Cerrar sesi&oacute;n</a></li>
+	        </ul>
+		</div>
+		<div id="contenido">
+		    <form name="elegirReparacion" id="elegirReparacion" method="post" action="../../../../ElegirReparacionCTRL">
+		    	<div id="reparaciones">
+		    		<select class="itemForm" id="selAuto" name="selAuto">
+		            	<option value="0">- -</option>
+		            	<%
+		            	ReparacionManager rm = ReparacionManager.getReparacionManager();
+		            	List<ReparacionDTO> reparaciones = rm.getReparaciones();
+		            	if(reparaciones!=null && !reparaciones.isEmpty()){
+		            	for(int i=0; i<reparaciones.size();i++){ %>
+		            		<option value="<%=reparaciones.get(i).getCodigo()%>"><%= reparaciones.get(i).getCodigo()+" - "+reparaciones.get(i).getTbAutomovil().getMarca()+" - "+reparaciones.get(i).getTbAutomovil().getPlaca()%></option>
+	           			<%}
+		            	}
+		            	%>            	
+		            </select>
+		            <input type="hidden" name="dir" id="dir" value="<%= dir %>" />	
+					<br />
+					<br />
+					<input class="inputButton" type="submit" name="modificar" id="modificar" value="Modificar" />
+					 <%
+		          if(respuesta!=null){
+		        	  %>
+		        	  <div id="respuesta">
+		        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		        	  <%=respuesta %></div>
+		        	  <%
+		          }
+		          %>
+				</div>
+		    </form>
+		</div>
 	</div>
 	<div id="piedepagina">
 	 	<p id="textopiedepagina"><strong>Acerca de SERVITEKA JC.</strong> © 2011 Derechos Reservados. <br>
