@@ -111,7 +111,7 @@
 	            <br />
 	            <br />                   
 	            <label class="leftText">Costo:</label>             
-	            <input class="itemForm" type="text" id="txtCosto" name="txtCosto" maxlength="10" />
+	            <input class="itemFormNum" type="text" id="txtCosto" name="txtCosto" maxlength="10" />
 	          </p>
 	          <br />
 	          <p>
