@@ -11,6 +11,14 @@ $(document).ready(function() {
 	jQuery.validator.addMethod("itemFormChar", function(value, element) {
         return this.optional(element) || /^[a-z]+$/i.test(value);
     }, "Este campo solo puede contener letras");
+	
+	jQuery.validator.addMethod("dropList", function(value, element) {
+        return this.optional(element) || element.value != "0"; 
+	}, "Por favor seleccione un elemento de la lista"); 
+	
+	jQuery.validator.addMethod("dropListDate", function(value, element) {
+        return this.optional(element) || element.value != "0"; 
+	}, ""); 
 		
 	$("#login").validate({
         rules: {
@@ -33,9 +41,6 @@ $(document).ready(function() {
                     minlength: "Debe tener una longitud minima de 4 caracteres"
                 }
         }
-        /*errorPlacement: function(error, element){
-            error.appendTo(element.parent());
-        }*/
     });
 	
 	
@@ -54,8 +59,33 @@ $(document).ready(function() {
                     minlength: "Debe tener una longitud minima de 4 caracteres"
                 }
         }
+    });
+	
+	$("#agregarRepuesto").validate({
+        rules: {
+
+               txtCantidad: {
+                    required: true
+                },
+                txtCosto: {
+                    required: true,
+                    minlength: 4
+                }
+        },
+        messages: {                            
+
+                txtCantidad:{
+                    required: "Es necesario escribir una cantidad"
+                },
+                txtCosto:{
+                    required: "Es necesario escribir un costo",
+                    minlength: "Debe tener una longitud minima de 4 caracteres"
+                }
+        }
         /*errorPlacement: function(error, element){
             error.appendTo(element.parent());
         }*/
     });
+	
+	$("#elegirReparacion").validate();
 }); 

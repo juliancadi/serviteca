@@ -9,8 +9,7 @@
 
 UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 String dir = request.getParameter("dir");
-Object respuesta = session.getAttribute("respuestaSolicitud");
-session.setAttribute("respuestaSolicitud",null);
+
 %>
 <head>
 	<%
@@ -25,6 +24,9 @@ session.setAttribute("respuestaSolicitud",null);
 	<%} %>
 	<title>Serviteca JC | Login</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../services/javascript/jquery.js"></script>
+		<script type="text/javascript" src="../services/javascript/jquery.validate.js"></script>
+		<script type="text/javascript" src="../services/javascript/validaciones.js"></script>
 <title>Elegir Reparaci&oacute;n</title>
 </head>
 <body> 
@@ -43,7 +45,7 @@ session.setAttribute("respuestaSolicitud",null);
 		<div id="contenido">
 		    <form name="elegirReparacion" id="elegirReparacion" method="post" action="../../../../ElegirReparacionCTRL">
 		    	<div id="reparaciones">
-		    		<select class="itemForm" id="selAuto" name="selAuto">
+		    		<select class="dropList" id="selReparacion" name="selReparacion">
 		            	<option value="0">- -</option>
 		            	<%
 		            	ReparacionManager rm = ReparacionManager.getReparacionManager();
@@ -58,18 +60,7 @@ session.setAttribute("respuestaSolicitud",null);
 		            <input type="hidden" name="dir" id="dir" value="<%= dir %>" />	
 					<br />
 					<br />
-					<input class="inputButton" type="submit" name="modificar" id="modificar" value="Modificar" />
-					 <%
-		          if(respuesta!=null){
-		        	  %>
-		        	  <div id="respuesta">
-		        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		        	  <%=respuesta %></div>
-		        	  <%
-		          }
-		          %>
+					<input class="inputButton" type="submit" name="aceptar" id="aceptar" value="Aceptar" />
 				</div>
 		    </form>
 		</div>

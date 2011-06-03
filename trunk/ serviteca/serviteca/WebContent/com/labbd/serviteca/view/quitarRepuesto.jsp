@@ -9,8 +9,6 @@
 	<%
 	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 	ReparacionDTO reparacion = (ReparacionDTO)session.getAttribute("reparacion");
-	Object resultsql = session.getAttribute("resultsql");
-	session.setAttribute("resultsql",null);
 	if(usuario==null){
 	%>
 	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
@@ -19,7 +17,7 @@
 	%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<%} %>
-	<title>Serviteca JC | Agregar Repuesto</title>
+	<title>Serviteca JC | Quitar Repuesto</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 	
 	<script type="text/javascript" src="../services/javascript/jquery.js"></script>
@@ -40,48 +38,42 @@
 	        </ul>
 		</div>
 		<div id="contenido">
-			<form name="agregarRepuesto" id="agregarRepuesto" method="post" action="../../../../AgregarRepuestoCTRL">
+			<form name="quitarRepuesto" id="quitarRepuesto" method="post" action="QuitarRepuestoCTRL">
 	          <p>
-	            <label class="leftText">Reparaci&oacute;n: </label>&nbsp;<%=reparacion.getCodigo() %>
-	            <input type="hidden" name="reparacion" id="reparacion" value="<%= reparacion.getCodigo() %>" />             
+	            <label class="leftText">Reparaci&oacute;n: </label>&nbsp;<%=reparacion.getCodigo() %>             
 	            <br />
 	            <br />
 	            <label class="leftText">Autom&oacute;vil:</label>&nbsp;<%=reparacion.getTbAutomovil().getPlaca()+" - " +reparacion.getTbAutomovil().getMarca() %> 
 	            <br />
+	            <br />
+	            <hr />
+	            <br />
 	            <br />                   
+	            <%
+	            RepuestoManager rm = RepuestoManager.getRepuestoManager();
+	            List <RepuestoDTO> repuestos = rm.getRepuestosPorReparacion(reparacion);
+	            if(repuestos!=null && !repuestos.isEmpty()){ %>
 	            <label class="leftText">Repuesto:</label>             
 	            <select class="dropList" id="selRepuesto" name="selRepuesto">
 	            	<option value="0">- -</option>
 	            	<%
-	            	RepuestoManager rm = RepuestoManager.getRepuestoManager();
-	            	List <RepuestoDTO> repuestos = rm.getRepuestos();
-	            	if(repuestos!=null && !repuestos.isEmpty())
 	            	for(int i=0; i<repuestos.size();i++){ %>
 	            		<option value="<%=repuestos.get(i).getCodigo()%>"><%= repuestos.get(i).getNombre() +" $"+repuestos.get(i).getCostoCompra() %></option>	
            			<%} %>            	
 	            </select>
 	            <br />
-	            <br />                   
-	                        
-	            <label class="leftText">Cantidad:</label>             
-	            <input class="itemFormNum" type="text" id="txtCantidad" name="txtCantidad" maxlength="10" />
-	            <br />
-	            <br />                   
-	                        
-	            <label class="leftText">Costo:</label>             
-	            <input class="itemFormNum" type="text" id="txtCosto" name="txtCosto" maxlength="10" />
-	          </p>
-	          <br />
 	          <p>
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	            <input class="inputButton" type="submit" name="agregar" id="agregar" value="Agregar" />
+	            <input class="inputButton" type="submit" name="quitar" id="quitar" value="Quitar" />
 	          </p> 
-	          <%if(resultsql!=null){ %>
-	          	<%= resultsql %>
-	          <%} %>  
+				<%}else{ %>
+				<div class="error">Esta reparaci&oacute;n no tiene ningun repuesto para eliminar</div>
+				<%} %>
+	          </p>
+	            
 	        </form>
 		</div>
 	</div>

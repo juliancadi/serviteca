@@ -40,7 +40,7 @@
 			<form name="agregarReparacion" id="agregarReparacion" method="post" action="LoginCTRL">
 	          <p>
 	            <label class="leftText">Autom&oacute;vil:</label>
-	            <select class="itemForm" id="selAuto" name="selAuto">
+	            <select class="dropList" id="selAuto" name="selAuto">
 	            	<option value="0">- -</option>
 	            	<%
 	            	AutomovilManager am = AutomovilManager.getAutomovilManager();
@@ -53,19 +53,19 @@
 	            <br />
 	            <br />                   
 	            <label class="leftText">Fecha ingreso:</label>             
-	            <select class="itemForm" id="selFechaInDia" name="selFechaInDia">
+	            <select class="dropListDate" id="selFechaInDia" name="selFechaInDia">
 	            	<option value="0">D&iacute;a</option>
 	            	<%for(int i=1; i<=31;i++){ %>
 	            		<option value="<%=i%>"><%= i %></option>	
            			<%} %>            	
 	            </select>
-	            <select class="itemForm" id="selFechaInMes" name="selFechaInMes">
+	            <select class="dropListDate" id="selFechaInMes" name="selFechaInMes">
 	            	<option value="0">M&eacute;s</option>
 	            	<%for(int i=1; i<=12;i++){ %>
 	            		<option value="<%=i%>"><%= i %></option>	
            			<%} %>
 	            </select>
-	            <select class="itemForm" id="selFechaInAnio" name="selFechaInAnio">
+	            <select class="dropListDate" id="selFechaInAnio" name="selFechaInAnio">
 	            	<option value="0">A&ntilde;o</option>
 	            	<%for(int i=2011; i>=2000;i--){ %>
 	            		<option value="<%=i%>"><%= i %></option>	
@@ -74,19 +74,19 @@
 	            <br />
 	            <br />                   
 	            <label class="leftText">Fecha salida:</label>             
-	            <select class="itemForm" id="selFechaOutDia" name="selFechaOutDia">
+	            <select class="dropListDate" id="selFechaOutDia" name="selFechaOutDia">
 	            	<option value="0">D&iacute;a</option>
 	            	<%for(int i=1; i<=31;i++){ %>
 	            		<option value="<%=i%>"><%= i %></option>	
            			<%} %>            	
 	            </select>
-	            <select class="itemForm" id="selFechaOutMes" name="selFechaOutMes">
+	            <select class="dropListDate" id="selFechaOutMes" name="selFechaOutMes">
 	            	<option value="0">M&eacute;s</option>
 	            	<%for(int i=1; i<=12;i++){ %>
 	            		<option value="<%=i%>"><%= i %></option>	
            			<%} %>
 	            </select>
-	            <select class="itemForm" id="selFechaOutAnio" name="selFechaOutAnio">
+	            <select class="dropListDate" id="selFechaOutAnio" name="selFechaOutAnio">
 	            	<option value="0">A&ntilde;o</option>
 	            	<%for(int i=2011; i>=2000;i--){ %>
 	            		<option value="<%=i%>"><%= i %></option>	
@@ -95,7 +95,7 @@
 	            <br />
 	            <br />                   
 	            <label class="leftText">Encargado:</label>             
-	            <select class="itemForm" id="selEncargado" name="selEncargado">
+	            <select class="dropList" id="selEncargado" name="selEncargado">
 	            	<option value="0">- -</option>
 	            	<%
 	            	MecanicoManager mm = MecanicoManager.getMecanicoManager();
@@ -108,7 +108,7 @@
 	            <br />
 	            <br />                   
 	            <label class="leftText">Estado:</label>             
-	            <select class="itemForm" id="selEstado" name="selEstado">
+	            <select class="dropList" id="selEstado" name="selEstado">
 	            	<option value="0">- -</option>
 	            	<%
 	            	EstadoManager em = EstadoManager.getEstadoManager();

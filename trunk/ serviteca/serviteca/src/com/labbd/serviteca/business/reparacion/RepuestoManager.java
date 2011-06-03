@@ -21,9 +21,15 @@ public class RepuestoManager {
        return repuesto;
    }
 
-   public List<RepuestoDTO> getRepuestoes(){
+   public List<RepuestoDTO> getRepuestos(){
        List<RepuestoDTO> repuestos = null;
        repuestos = dao.getRepuestos();
+       return repuestos;
+	}
+   
+   public List<RepuestoDTO> getRepuestosPorReparacion(ReparacionDTO r){
+       List<RepuestoDTO> repuestos = null;
+       repuestos = dao.getRepuestosPorReparacion(r);
        return repuestos;
 	}
 
