@@ -24,9 +24,9 @@
 		<div id="menuv">
 	        <ul>
 	            <li><a href="agregarReparacion.jsp">Agregar reparaci&oacute;n</a></li>
-	            <li><a href="modificarReparacion.jsp">Modificar reparaci&oacute;n</a></li>
-	            <li><a href="agregarRepuesto">Agregar repuesto a reparaci&oacute;n</a></li>
-	            <li><a href="quitarRepuesto">Quitar repuesto de reparaci&oacute;n</a></li>
+	            <li><a href="elegirReparacion.jsp?dir=mod">Modificar reparaci&oacute;n</a></li>
+	            <li><a href="elegirReparacion.jsp?dir=agr">Agregar repuesto a reparaci&oacute;n</a></li>
+	            <li><a href="elegirReparacion.jsp?dir=qui">Quitar repuesto de reparaci&oacute;n</a></li>
 	            <li><a href="../../../../index.jsp?logout=1">Cerrar sesi&oacute;n</a></li>
 	        </ul>
 		</div>
