@@ -11,7 +11,16 @@ UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 
 %>
 <head>
+	<%
+
+		if(usuario==null){
+	%>
+	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
+	<%
+	}else{
+	%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<%} %>
 	<title>Serviteca JC | Login</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 <title>Elegir Reparaci&oacute;n</title>

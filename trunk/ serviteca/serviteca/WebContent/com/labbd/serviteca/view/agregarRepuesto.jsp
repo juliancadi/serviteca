@@ -1,11 +1,21 @@
 <%@page import="java.util.List"%>
+<%@ page import="com.labbd.serviteca.services.session.*" %> 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="com.labbd.serviteca.business.reparacion.*" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+	<%
+	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
+		if(usuario==null){
+	%>
+	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
+	<%
+	}else{
+	%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<%} %>
 	<title>Serviteca JC | Agregar Repuesto</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 	
