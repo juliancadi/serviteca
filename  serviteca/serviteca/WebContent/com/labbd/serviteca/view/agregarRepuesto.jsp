@@ -10,7 +10,9 @@
 	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 	ReparacionDTO reparacion = (ReparacionDTO)session.getAttribute("reparacion");
 	Object resultsql = session.getAttribute("resultsql");
+	Object respuesta = session.getAttribute("respuestaSolicitud");
 	session.setAttribute("resultsql",null);
+	session.setAttribute("respuestaSolicitud",null);
 	if(usuario==null){
 	%>
 	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
@@ -82,6 +84,17 @@
 	          <%if(resultsql!=null){ %>
 	          	<%= resultsql %>
 	          <%} %>  
+	          <%
+	          if(respuesta!=null){
+	        	  %>
+	        	  <div id="respuesta">
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  <%=respuesta %></div>
+	        	  <%
+	          }
+	          %>
 	        </form>
 		</div>
 	</div>

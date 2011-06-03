@@ -9,6 +9,8 @@
 	<%
 	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 	ReparacionDTO reparacion = (ReparacionDTO)session.getAttribute("reparacion");
+	Object resultsql = session.getAttribute("resultsql");
+	session.setAttribute("resultsql",null);
 	if(usuario==null){
 	%>
 	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
@@ -38,9 +40,10 @@
 	        </ul>
 		</div>
 		<div id="contenido">
-			<form name="quitarRepuesto" id="quitarRepuesto" method="post" action="QuitarRepuestoCTRL">
+			<form name="quitarRepuesto" id="quitarRepuesto" method="post" action="../../../../QuitarRepuestoCTRL">
 	          <p>
-	            <label class="leftText">Reparaci&oacute;n: </label>&nbsp;<%=reparacion.getCodigo() %>             
+	            <label class="leftText">Reparaci&oacute;n: </label>&nbsp;<%=reparacion.getCodigo() %>
+	            <input type="hidden" name="reparacion" id="reparacion" value="<%= reparacion.getCodigo() %>" />             
 	            <br />
 	            <br />
 	            <label class="leftText">Autom&oacute;vil:</label>&nbsp;<%=reparacion.getTbAutomovil().getPlaca()+" - " +reparacion.getTbAutomovil().getMarca() %> 
@@ -80,7 +83,9 @@
 				<div class="error">Esta reparaci&oacute;n no tiene ningun repuesto para eliminar</div>
 				<%} %>
 	          </p>
-	            
+	          <%if(resultsql!=null){ %>
+	          	<%= resultsql %>
+	          <%} %>    
 	        </form>
 		</div>
 	</div>

@@ -16,5 +16,10 @@ public class RepuestoPorRepaDAOHelper {
         String result = "INSERT INTO tb_repuesto_por_repa VALUES(?,?,?,?)";
         return result;
     }
+    
+    public static String deleteRepuestoPorRepa() {
+        String result = "DELETE FROM tb_repuesto_por_repa WHERE codigo_repuesto=? AND codigo_repa=?";
+        return result;
+    }
 
 }

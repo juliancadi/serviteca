@@ -119,7 +119,7 @@ insert into tb_repuesto values('DH201G', 'Radiador',20,'5467234',120000,'HardH20
 insert into tb_repuesto values('KKI38H', 'Exosto',45,'7894564',30000,'Faycar','');
 insert into tb_repuesto values('GFD8AF', 'Neumatico',3,'7894564',20000,'Pirelli','');
 insert into tb_repuesto values('IJ875AA', 'Suspencion',10,'7894564',180000,'Grob','');
-insert into tb_repuesto values('CH02P', 'Bujia',99,'1264654',90000,'Astra','');
+insert into tb_repuesto values('CH02P', 'Retrovisor',99,'1264654',90000,'Astra','');
 
 create table tb_cliente(
   cedula varchar2(10) primary key,
@@ -182,6 +182,7 @@ create table tb_repuesto_por_repa(
   cantidad number not null,
   costo_venta number not null
 );
+ALTER TABLE tb_repuesto_por_repa add CONSTRAINT tb_rep_repa_pk PRIMARY KEY (codigo_repuesto, codigo_repa);
 
 insert into tb_repuesto_por_repa values('CH01K','1',5,30000);
 insert into tb_repuesto_por_repa values('IJ875AA','1',1,250000);
@@ -242,5 +243,20 @@ BEGIN
 SELECT seq_reparacion.NEXTVAL INTO :NEW.codigo FROM dual;
 END;
 /
+--TRIGGER DE VALIDACION MELO
+create or replace trigger tg_insert_repuesto before insert on tb_repuesto_por_repa for each row
+declare
+cant_stock tb_repuesto.existencias%TYPE;
+begin
+  SELECT existencias INTO cant_stock FROM tb_repuesto WHERE codigo = :NEW.codigo_repuesto; 
+   IF (cant_stock < :NEW.cantidad) THEN
+    RAISE_APPLICATION_ERROR(-20506,'La cantidad en inventario es insuficiente');
+   END IF;
+end;
+/
+--------------------------------------
+
 
 commit;
+
+select * from tb_repuesto_por_repa;
