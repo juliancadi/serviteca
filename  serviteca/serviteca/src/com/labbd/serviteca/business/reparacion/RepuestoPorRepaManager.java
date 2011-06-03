@@ -26,5 +26,11 @@ public class RepuestoPorRepaManager {
        repuestosPorRepa = dao.getRepuestosPorRepa();
        return repuestosPorRepa;
 	}
+   
+   public String insertRepuestoPorRepa(RepuestoPorRepaDTO r){
+       String insert = "null";
+       insert = dao.insertRepuestoPorRepa(r);
+       return insert;
+	}
 
 }

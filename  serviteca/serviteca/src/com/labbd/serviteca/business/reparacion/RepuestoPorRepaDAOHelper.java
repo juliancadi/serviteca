@@ -11,5 +11,10 @@ public class RepuestoPorRepaDAOHelper {
     	String result = "SELECT codigo_repuesto, codigo_repa, cantidad, costo_venta FROM tb_repuesto_por_repa";
         return result;
     }
+    
+    public static String insertRepuestoPorRepa() {
+        String result = "INSERT INTO tb_repuesto_por_repa VALUES(?,?,?,?)";
+        return result;
+    }
 
 }

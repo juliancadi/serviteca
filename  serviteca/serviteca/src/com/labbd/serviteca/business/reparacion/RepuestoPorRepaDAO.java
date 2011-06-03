@@ -96,5 +96,32 @@ public class RepuestoPorRepaDAO {
             }
             return result;
 	}
+    
+    public String insertRepuestoPorRepa(RepuestoPorRepaDTO r){
+        String result = "null";
+        Connection con = null;
+        try{
+            con = DBConnection.getConnection();
+            PreparedStatement p = con.prepareStatement(RepuestoPorRepaDAOHelper.insertRepuestoPorRepa());
+
+            p.setString(1, r.getTbRepuesto().getCodigo());
+            p.setString(2, r.getTbReparacion().getCodigo());
+            p.setBigDecimal(3, r.getCantidad());
+            p.setBigDecimal(4, r.getCostoVenta());
+            
+            p.execute();
+            result = "1";
+        }
+        catch(Exception ex){
+                ex.printStackTrace();
+        }
+        finally{
+            try{
+            	DBConnection.returnConnection(con);
+            }
+            catch(Exception clo){}
+        }
+        return result;
+    }
 
 }
