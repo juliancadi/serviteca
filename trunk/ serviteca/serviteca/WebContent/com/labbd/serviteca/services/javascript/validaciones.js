@@ -1,13 +1,17 @@
 $(document).ready(function() { 
 
-	jQuery.validator.addMethod("txtUser", function(value, element) {
+	jQuery.validator.addMethod("itemFormAlfaNum", function(value, element) {
         return this.optional(element) || /^[a-z0-9\_]+$/i.test(value);
-    }, "El usuario solo puede contener numeros, letras y el caracter '_'");
+    }, "Este campo solo puede contener numeros, letras y el caracter '_'");
 	
-	jQuery.validator.addMethod("txtPass", function(value, element) {
-        return this.optional(element) || /^[a-z0-9\_]+$/i.test(value);
-    }, "La contraseña contiene caracteres no validos");
+	jQuery.validator.addMethod("itemFormNum", function(value, element) {
+        return this.optional(element) || /^[0-9]+$/i.test(value);
+    }, "Este campo solo puede contener numeros");
 	
+	jQuery.validator.addMethod("itemFormChar", function(value, element) {
+        return this.optional(element) || /^[a-z]+$/i.test(value);
+    }, "Este campo solo puede contener letras");
+		
 	$("#login").validate({
         rules: {
         	   txtUser: {
@@ -33,6 +37,7 @@ $(document).ready(function() {
             error.appendTo(element.parent());
         }*/
     });
+	
 	
 	$("#agregarReparacion").validate({
         rules: {
