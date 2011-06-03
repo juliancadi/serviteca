@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -110,16 +111,56 @@ public class RepuestoPorRepaDAO {
             p.setBigDecimal(4, r.getCostoVenta());
             
             p.execute();
-            result = "1";
+            result = "success";
         }
-        catch(Exception ex){
-                ex.printStackTrace();
+        catch(SQLException ex){
+        	int error = ex.getErrorCode();
+        	switch(error){
+        	case 1:
+        		result="Esta reparacion ya tiene este tipo de respuestos";
+        		break;
+        	case 20506:
+        		result="No hay cantidad suficiente en inventario";
+        		break;
+        	default:
+        		result = ex.getMessage();
+        		break;
+        	}
         }
         finally{
             try{
             	DBConnection.returnConnection(con);
             }
-            catch(Exception clo){}
+            catch(Exception clo){
+            	result = clo.getMessage();
+            }
+        }
+        return result;
+    }
+    
+    public String deleteRepuestoPorRepa(RepuestoPorRepaDTO r){
+        String result = "null";
+        Connection con = null;
+        try{
+            con = DBConnection.getConnection();
+            PreparedStatement p = con.prepareStatement(RepuestoPorRepaDAOHelper.deleteRepuestoPorRepa());
+
+            p.setString(1, r.getTbRepuesto().getCodigo());
+            p.setString(2, r.getTbReparacion().getCodigo());
+            
+            p.execute();
+            result = "success";
+        }
+        catch(Exception ex){
+        	result = ex.getMessage();
+        }
+        finally{
+            try{
+            	DBConnection.returnConnection(con);
+            }
+            catch(Exception clo){
+            	result = clo.getMessage();
+            }
         }
         return result;
     }

@@ -32,5 +32,11 @@ public class RepuestoPorRepaManager {
        insert = dao.insertRepuestoPorRepa(r);
        return insert;
 	}
+   
+   public String deleteRepuestoPorRepa(RepuestoPorRepaDTO r){
+       String delete = "null";
+       delete = dao.deleteRepuestoPorRepa(r);
+       return delete;
+	}
 
 }
