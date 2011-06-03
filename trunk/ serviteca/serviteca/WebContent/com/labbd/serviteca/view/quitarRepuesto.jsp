@@ -51,14 +51,21 @@
 	            <br />                   
 	            <%
 	            RepuestoManager rm = RepuestoManager.getRepuestoManager();
+	            RepuestoPorRepaManager rprm = RepuestoPorRepaManager.getRepuestoPorRepaManager();
 	            List <RepuestoDTO> repuestos = rm.getRepuestosPorReparacion(reparacion);
-	            if(repuestos!=null && !repuestos.isEmpty()){ %>
+	            if(repuestos!=null && !repuestos.isEmpty()){
+	            	%>
 	            <label class="leftText">Repuesto:</label>             
 	            <select class="dropList" id="selRepuesto" name="selRepuesto">
 	            	<option value="0">- -</option>
 	            	<%
-	            	for(int i=0; i<repuestos.size();i++){ %>
-	            		<option value="<%=repuestos.get(i).getCodigo()%>"><%= repuestos.get(i).getNombre() +" $"+repuestos.get(i).getCostoCompra() %></option>	
+	            	for(int i=0; i<repuestos.size();i++){
+	            		RepuestoPorRepaDTO repPorRepa = new RepuestoPorRepaDTO();
+	            		repPorRepa.setTbReparacion(reparacion);
+	            		repPorRepa.setTbRepuesto(repuestos.get(i));
+	            		repPorRepa =rprm.getRepuestoPorRepa(repPorRepa);
+	            		%>
+	            		<option value="<%=repuestos.get(i).getCodigo()%>"><%=repPorRepa.getCantidad()+" x " +repuestos.get(i).getNombre() +" $"+repuestos.get(i).getCostoCompra() %></option>	
            			<%} %>            	
 	            </select>
 	            <br />
