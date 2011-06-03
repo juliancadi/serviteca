@@ -6,6 +6,7 @@
 <%
 
 Object respuesta = session.getAttribute("respuestaSolicitud");
+session.setAttribute("respuestaSolicitud",null);
 String logout = request.getParameter("logout");
 if(logout!=null){
 	//session.invalidate();
