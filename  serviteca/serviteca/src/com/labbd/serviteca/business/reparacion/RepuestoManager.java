@@ -32,5 +32,6 @@ public class RepuestoManager {
        repuestos = dao.getRepuestosPorReparacion(r);
        return repuestos;
 	}
+   
 
 }
