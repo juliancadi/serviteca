@@ -8,7 +8,9 @@
 <%
 
 UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
-
+String dir = request.getParameter("dir");
+Object respuesta = session.getAttribute("respuestaSolicitud");
+session.setAttribute("respuestaSolicitud",null);
 %>
 <head>
 	<%
@@ -35,14 +37,28 @@ UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 	            	<%
 	            	ReparacionManager rm = ReparacionManager.getReparacionManager();
 	            	List<ReparacionDTO> reparaciones = rm.getReparaciones();
-	            	if(reparaciones!=null && !reparaciones.isEmpty())
+	            	if(reparaciones!=null && !reparaciones.isEmpty()){
 	            	for(int i=0; i<reparaciones.size();i++){ %>
-	            		<option value="<%=reparaciones.get(i).getCodigo()%>"><%= reparaciones.get(i).getCodigo()+" - "+reparaciones.get(i).getTbAutomovil().getMarca()+" - "+reparaciones.get(i).getTbAutomovil().getPlaca()%></option>	
-           			<%} %>            	
+	            		<option value="<%=reparaciones.get(i).getCodigo()%>"><%= reparaciones.get(i).getCodigo()+" - "+reparaciones.get(i).getTbAutomovil().getMarca()+" - "+reparaciones.get(i).getTbAutomovil().getPlaca()%></option>
+           			<%}
+	            	}
+	            	%>            	
 	            </select>
+	            <input type="hidden" name="dir" id="dir" value="<%= dir %>" />	
 				<br />
 				<br />
 				<input class="inputButton" type="submit" name="modificar" id="modificar" value="Modificar" />
+				 <%
+	          if(respuesta!=null){
+	        	  %>
+	        	  <div id="respuesta">
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  <%=respuesta %></div>
+	        	  <%
+	          }
+	          %>
 			</div>
 	    </form>
 	</div>
