@@ -1,16 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.labbd.serviteca.services.session.*"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 
 Object respuesta = session.getAttribute("respuestaSolicitud");
 String logout = request.getParameter("logout");
 if(logout!=null){
-	session.invalidate();
+	//session.invalidate();
+	session.setAttribute("usuarioactual",null);
 }
+
 %>
 <html>
 	<head>
+			<%
+			UsuarioDTO usuario  = (UsuarioDTO)session.getAttribute("usuarioactual");
+
+
+		String redireccionar = "<meta http-equiv=\"Refresh\" content=\"2;url=com/labbd/serviteca/view/elegirRol.jsp\" />"+
+							   "<title>Serviteca JC | Login</title>"+
+								"</head>"+
+								"<body>"+
+								"<p><a href=\"com/labbd/serviteca/view/elegirRol.jsp\">Redireccionando a Serviteca JS...</a></p>"+
+								"</body>"+
+								"</html>";
+		if(usuario!=null){
+		%>
+		<%=redireccionar %>		
+		<%
+		}else{
+		%>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Serviteca JC | Login</title>
 		<link href="com/labbd/serviteca/view/styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
@@ -59,3 +80,6 @@ if(logout!=null){
 	    </div>  
 	</body>
 </html>
+<%
+}
+%>

@@ -4,12 +4,20 @@
 <%@ page import="com.labbd.serviteca.services.session.*" %> 
 <html>
 <%
-
+response.setHeader("Cache-Control","no-cache");
 UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 
 %>
 <head>
+	<%
+		if(usuario==null){
+	%>
+	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
+	<%
+	}else{
+	%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<%} %>
 	<title>Serviteca JC | Login</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 <title>Elegir Rol</title>
@@ -19,6 +27,7 @@ UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 	<div id="inicioSesion">
 	    <form name="elegirRol" id="elegirRol" method="post" action="../../../../ElegirRolCTRL">
 	    	<%if(usuario!=null){ %>
+	    	<div style="text-align: center;">Bienvenido <%=usuario.getNombre() %><a href="../../../../index.jsp?logout=1">Cerrar sesi&oacute;n</a></div>
 	    	<div id="roles"><br>
 	    	<%
 	    	String checked = "checked=\"checked\"";
@@ -30,11 +39,8 @@ UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
 		<br>
 		<input class="inputButton" type="submit" name="ingresar" id="ingresar" value="Ingresar" />
 		</div>
-		<%}else{ %>
-			<center><div id="respuesta">Debe ingresar con el nombre de usuario y contraseña</div>
-			<br>
-			<a href="../../../../index.jsp">Ingresar</a></center>
 		<%} %>
+
 	    </form>
 	</div>
 	<div id="piedepagina">
