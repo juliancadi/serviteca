@@ -11,5 +11,10 @@ public class ReparacionDAOHelper {
     	String result = "SELECT codigo, automovil, fecha_ingreso, fecha_salida, encargado, estado, costo FROM tb_reparacion ORDER BY codigo";
         return result;
     }
+    
+    public static String insertReparacion() {
+        String result = "INSERT INTO tb_reparacion VALUES(?,?,?,?,?,?,?)";
+        return result;
+    }
 
 }

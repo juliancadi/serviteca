@@ -7,7 +7,10 @@
 <html>
 <head>
 	<%
+	String prueba = "hola como estan";
+	session.setAttribute("prueba",prueba);
 	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
+	ReparacionDTO reparacion = (ReparacionDTO)session.getAttribute("reparacion");
 		if(usuario==null){
 	%>
 	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
@@ -37,8 +40,12 @@
 	        </ul>
 		</div>
 		<div id="contenido">
-			<form name="agregarReparacion" id="agregarReparacion" method="post" action="LoginCTRL">
+			<form name="modificarReparacion" id="modificarReparacion" method="post" action="../../../../ModificarReparacionCTRL">
 	          <p>
+	          	<label class="leftText">Reparaci&oacute;n: </label>&nbsp;<%=reparacion.getCodigo() %>
+	            <input type="hidden" name="reparacion" id="reparacion" value="<%= reparacion.getCodigo() %>" />             
+	            <br />
+	            <br />
 	            <label class="leftText">Autom&oacute;vil:</label>
 	            <select class="itemForm" id="selAuto" name="selAuto">
 	            	<option value="0">- -</option>
