@@ -1,3 +1,4 @@
+<%@page import="com.labbd.serviteca.business.factura.FacturaDTO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="com.labbd.serviteca.services.session.*" %> 
@@ -6,6 +7,7 @@
 <head>
 	<%
 	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
+	FacturaDTO facturaGenerada = (FacturaDTO)session.getAttribute("factura");
 		if(usuario==null){
 	%>
 	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
@@ -14,7 +16,7 @@
 	%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<%} %>
-	<title>Serviteca JC | Contador</title>
+	<title>Serviteca JC | Factura</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -26,6 +28,26 @@
 	            <li><a href="elegirReparacionFac.jsp">Generar factura</a></li>
 	            <li><a href="../../../../index.jsp?logout=1">Cerrar sesi&oacute;n</a></li>
 	        </ul>
+		</div>
+		<div id="contenido">
+			<div id="mostrarFactura">
+				<table width="500" border="1">
+				  <tr>
+				    <td>C&oacute;digo</td>
+				    <td>Reparaci&oacute;n</td>
+				    <td>Valor neto</td>
+				    <td>IVA</td>
+				    <td>Valor total</td>
+				  </tr>
+				  <tr>
+				    <td><%=facturaGenerada.getCodigo() %></td>
+				    <td><%=facturaGenerada.getTbReparacion().getCodigo()+" - "+facturaGenerada.getTbReparacion().getTbAutomovil().getMarca()+" - "+facturaGenerada.getTbReparacion().getTbAutomovil().getPlaca() %></td>
+				    <td><%=facturaGenerada.getValorNeto() %></td>
+				    <td><%=facturaGenerada.getIva() %></td>
+				    <td><%=facturaGenerada.getValorTotal() %></td>
+				  </tr>
+				</table>
+			</div>
 		</div>
 	</div>
 	<div id="piedepagina">
