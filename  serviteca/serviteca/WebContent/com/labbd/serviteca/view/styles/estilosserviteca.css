@@ -154,3 +154,10 @@ body {
 	margin:0 auto;
 	padding: 1px;
 }
+
+#mostrarFactura {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 500px;
+	margin: 0 auto;
+	padding: 5%;
+}
