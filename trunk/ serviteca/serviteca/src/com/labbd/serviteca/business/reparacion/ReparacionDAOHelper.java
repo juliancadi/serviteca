@@ -16,5 +16,10 @@ public class ReparacionDAOHelper {
         String result = "INSERT INTO tb_reparacion VALUES(?,?,?,?,?,?,?)";
         return result;
     }
+    
+    public static String modificarReparacion() {
+        String result = "UPDATE tb_reparacion SET automovil=?,fecha_ingreso=?,fecha_salida=?,encargado=?,estado=?,costo=? WHERE codigo=?";
+        return result;
+    }
 
 }

@@ -32,5 +32,11 @@ public class ReparacionManager {
        insert = dao.insertReparacion(r);
        return insert;
 	}
+   
+   public String modificarReparacion(ReparacionDTO r){
+       String update = "null";
+       update = dao.modificarReparacion(r);
+       return update;
+	}
 
 }

@@ -151,5 +151,35 @@ public class ReparacionDAO {
         }
         return result;
     }
+    public String modificarReparacion(ReparacionDTO r){
+        String result = "null";
+        Connection con = null;
+        try{
+            con = DBConnection.getConnection();
+            PreparedStatement p = con.prepareStatement(ReparacionDAOHelper.modificarReparacion());
+          
+            p.setString(1, r.getTbAutomovil().getCodigo());
+            p.setDate(2, new Date(r.getFechaIngreso().getTime()));
+            p.setDate(3, new Date(r.getFechaSalida().getTime()));
+            p.setString(4, r.getTbMecanico().getCedula());
+            p.setString(5, r.getTbEstado().getCodigo());
+            p.setBigDecimal(6, r.getCosto());
+            p.setString(7, r.getCodigo());
+            p.execute();
+            result = "success";
+        }
+        catch(SQLException ex){
+        	ex.printStackTrace();    	
+        }
+        finally{
+            try{
+            	DBConnection.returnConnection(con);
+            }
+            catch(Exception clo){
+            	result = clo.getMessage();
+            }
+        }
+        return result;
+    }
 
 }
