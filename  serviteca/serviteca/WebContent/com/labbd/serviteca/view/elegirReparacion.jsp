@@ -22,12 +22,12 @@ String dir = request.getParameter("dir");
 	%>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<%} %>
-	<title>Serviteca JC | Login</title>
+	<title>Serviteca JC | Elegir Reparaci&oacute;n</title>
 	<link href="styles/estilosserviteca.css" rel="stylesheet" type="text/css" />
 	<script type="text/javascript" src="../services/javascript/jquery.js"></script>
 		<script type="text/javascript" src="../services/javascript/jquery.validate.js"></script>
 		<script type="text/javascript" src="../services/javascript/validaciones.js"></script>
-<title>Elegir Reparaci&oacute;n</title>
+
 </head>
 <body> 
 	<div id="cabezote"></div>
