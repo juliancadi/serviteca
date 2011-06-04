@@ -232,7 +232,7 @@ END;
 
 CREATE SEQUENCE seq_reparacion
 INCREMENT BY 1
-START WITH 1
+START WITH 7
 NOMINVALUE
 NOMAXVALUE;
 
@@ -243,7 +243,7 @@ BEGIN
 SELECT seq_reparacion.NEXTVAL INTO :NEW.codigo FROM dual;
 END;
 /
---TRIGGER DE VALIDACION MELO
+--TRIGGER DE VALIDACION
 create or replace trigger tg_insert_repuesto before insert on tb_repuesto_por_repa for each row
 declare
 cant_stock tb_repuesto.existencias%TYPE;
@@ -256,8 +256,50 @@ end;
 /
 --------------------------------------
 
+--AUDITORIA
+drop table tb_auditoria;
+create table tb_auditoria(
+  usuario varchar2(100),
+  usuarioenv varchar2(100),
+  host varchar2(100),
+  tabla varchar2(100),
+  accion varchar2(100),
+  fecha varchar2(50)
+);
+
+create or replace trigger tg_auditoria1
+after delete or insert or update on tb_repuesto_por_repa
+referencing new as new old as old
+for each row
+begin
+if INSERTING then
+  insert into tb_auditoria values (USER, USERENV('TERMINAL'), SYS_CONTEXT ('userenv', 'host'),'tb_repuesto_por_repa','INSERT',TO_CHAR(SYSDATE,'DD/MM/YYYY HH24:MI:SS'));
+end if;
+if UPDATING then
+  insert into tb_auditoria values (USER, USERENV('TERMINAL'), SYS_CONTEXT ('userenv', 'host'),'tb_repuesto_por_repa','UPDATE',TO_CHAR(SYSDATE,'DD/MM/YYYY HH24:MI:SS'));
+end if;
+if DELETING then
+  insert into tb_auditoria values (USER, USERENV('TERMINAL'), SYS_CONTEXT ('userenv', 'host'),'tb_repuesto_por_repa','DELETE', TO_CHAR(SYSDATE,'DD/MM/YYYY HH24:MI:SS'));  
+end if;
+end;
+/
+
+create or replace trigger tg_auditoria2
+after delete or insert or update on tb_reparacion
+referencing new as new old as old
+for each row
+begin
+if INSERTING then
+  insert into tb_auditoria values (USER, USERENV('TERMINAL'), SYS_CONTEXT ('userenv', 'host'),'tb_reparacion','INSERT',TO_CHAR(SYSDATE,'DD/MM/YYYY HH24:MI:SS'));
+end if;
+if UPDATING then
+  insert into tb_auditoria values (USER, USERENV('TERMINAL'), SYS_CONTEXT ('userenv', 'host'),'tb_reparacion','UPDATE',TO_CHAR(SYSDATE,'DD/MM/YYYY HH24:MI:SS'));
+end if;
+if DELETING then
+  insert into tb_auditoria values (USER, USERENV('TERMINAL'), SYS_CONTEXT ('userenv', 'host'),'tb_reparacion','DELETE', TO_CHAR(SYSDATE,'DD/MM/YYYY HH24:MI:SS'));  
+end if;
+end;
+/
+
 
 commit;
-
-select * from tb_repuesto_por_repa;
-insert into tb_reparacion values('7','7','1/4/2009','2/6/2009','123324','1',1500000);
