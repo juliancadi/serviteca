@@ -80,7 +80,7 @@
 	            <input class="inputButton" type="submit" name="quitar" id="quitar" value="Quitar" />
 	          </p> 
 				<%}else{ %>
-				<div class="error">Esta reparaci&oacute;n no tiene ningun repuesto para eliminar</div>
+				<div class="respuesta">Esta reparaci&oacute;n no tiene ningun repuesto para eliminar</div>
 				<%} %>
 	          </p>
 	          <%if(resultsql!=null){ %>
