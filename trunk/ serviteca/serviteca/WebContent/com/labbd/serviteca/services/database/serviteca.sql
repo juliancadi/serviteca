@@ -260,3 +260,4 @@ end;
 commit;
 
 select * from tb_repuesto_por_repa;
+insert into tb_reparacion values('7','7','1/4/2009','2/6/2009','123324','1',1500000);

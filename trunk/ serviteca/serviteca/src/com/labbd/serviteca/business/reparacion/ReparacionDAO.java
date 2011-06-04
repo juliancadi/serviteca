@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,5 +120,36 @@ public class ReparacionDAO {
             }
             return result;
 	}
+    
+    public String insertReparacion(ReparacionDTO r){
+        String result = "null";
+        Connection con = null;
+        try{
+            con = DBConnection.getConnection();
+            PreparedStatement p = con.prepareStatement(ReparacionDAOHelper.insertReparacion());
+
+            p.setString(1, r.getCodigo());
+            p.setString(2, r.getTbAutomovil().getCodigo());
+            p.setDate(3, new Date(r.getFechaIngreso().getTime()));
+            p.setDate(4, new Date(r.getFechaSalida().getTime()));
+            p.setString(5, r.getTbMecanico().getCedula());
+            p.setString(6, r.getTbEstado().getCodigo());
+            p.setBigDecimal(7, r.getCosto());
+            p.execute();
+            result = "success";
+        }
+        catch(SQLException ex){
+        	ex.printStackTrace();    	
+        }
+        finally{
+            try{
+            	DBConnection.returnConnection(con);
+            }
+            catch(Exception clo){
+            	result = clo.getMessage();
+            }
+        }
+        return result;
+    }
 
 }
