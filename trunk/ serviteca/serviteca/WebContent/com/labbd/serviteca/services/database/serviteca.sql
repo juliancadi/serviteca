@@ -257,7 +257,7 @@ end;
 --------------------------------------
 
 --AUDITORIA
-drop table tb_auditoria;
+
 create table tb_auditoria(
   usuario varchar2(100),
   usuarioenv varchar2(100),
