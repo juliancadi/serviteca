@@ -26,5 +26,11 @@ public class ReparacionManager {
        reparaciones = dao.getReparaciones();
        return reparaciones;
 	}
+   
+   public String insertReparacion(ReparacionDTO r){
+       String insert = "null";
+       insert = dao.insertReparacion(r);
+       return insert;
+	}
 
 }

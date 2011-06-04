@@ -21,6 +21,8 @@ import com.labbd.serviteca.services.session.UsuarioDTO;
 public class AgregarReparacionCTRL extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String AGRREPA_PATH = "com/labbd/serviteca/view/agregarReparacion.jsp";
+	private static final String NO_USER = "Debe ingresar con el nombre de usuario y contraseña";
+	private static final String INDEX = "index.jsp";
 	private DateFormat fechaFormat = new SimpleDateFormat("dd/MM/yyyy");
        
     /**
@@ -78,19 +80,27 @@ public class AgregarReparacionCTRL extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else{
+			rechazar(request, response,NO_USER, INDEX);
+		}
 	}
 	
-	private void aprobar(HttpServletRequest req, HttpServletResponse resp, RepuestoPorRepaDTO repuesto, String dir) throws ServletException, IOException{
-		RepuestoPorRepaManager rprm = RepuestoPorRepaManager.getRepuestoPorRepaManager();
-		String insercion = rprm.insertRepuestoPorRepa(repuesto);
+	private void aprobar(HttpServletRequest req, HttpServletResponse resp, ReparacionDTO repa, String dir) throws ServletException, IOException{
+		ReparacionManager rm = ReparacionManager.getReparacionManager();
+		String insercion = rm.insertReparacion(repa);
 		if(insercion.equals("success")){
-			req.getSession().setAttribute("resultsql", "El repuesto se agrego correctamente");
-			resp.sendRedirect(AGRREPUESTO_PATH);
+			req.getSession().setAttribute("resultsql", "La reparacion se agrego correctamente");
+			resp.sendRedirect(dir);
 		}
 		else{
-			rechazar(req, resp,insercion,AGRREPUESTO_PATH);
+			rechazar(req, resp,insercion,dir);
 		}
 		
+	}
+	
+	private void rechazar(HttpServletRequest req, HttpServletResponse resp, Object respuesta, String path) throws ServletException, IOException{
+		req.getSession().setAttribute("respuestaSolicitud", respuesta);
+		resp.sendRedirect(path);
 	}
 
 }

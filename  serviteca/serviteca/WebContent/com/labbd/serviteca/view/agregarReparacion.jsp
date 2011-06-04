@@ -8,6 +8,10 @@
 <head>
 	<%
 	UsuarioDTO usuario = (UsuarioDTO)session.getAttribute("usuarioactual");
+	Object resultsql = session.getAttribute("resultsql");
+	Object respuesta = session.getAttribute("respuestaSolicitud");
+	session.setAttribute("resultsql",null);
+	session.setAttribute("respuestaSolicitud",null);
 		if(usuario==null){
 	%>
 	<meta http-equiv="Refresh" content="0;url=../../../../index.jsp" />
@@ -37,7 +41,7 @@
 	        </ul>
 		</div>
 		<div id="contenido">
-			<form name="agregarReparacion" id="agregarReparacion" method="post" action="LoginCTRL">
+			<form name="agregarReparacion" id="agregarReparacion" method="post" action="../../../../AgregarReparacionCTRL">
 	          <p>
 	            <label class="leftText">Autom&oacute;vil:</label>
 	            <select class="dropList" id="selAuto" name="selAuto">
@@ -130,7 +134,21 @@
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	            <input class="inputButton" type="submit" name="ingresar" id="ingresar" value="Ingresar" />
-	          </p>   
+	          </p>
+	          <%if(resultsql!=null){ %>
+	          	<%= resultsql %>
+	          <%} %>  
+	          <%
+	          if(respuesta!=null){
+	        	  %>
+	        	  <div id="respuesta">
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	        	  <%=respuesta %></div>
+	        	  <%
+	          }
+	          %>   
 	        </form>
 		</div>
 	</div>
